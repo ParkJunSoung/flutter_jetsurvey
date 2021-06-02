@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_jetsurvey/ui/home.dart';
 
-class ComeposePage extends StatelessWidget {
-  const ComeposePage({Key key}) : super(key: key);
+class ComposePage extends StatelessWidget {
+  const ComposePage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
