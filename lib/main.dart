@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_jetsurvey/ui/compose_page.dart';
 import 'package:flutter_jetsurvey/ui/home.dart';
 
 void main() {
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Home(),
+      home: ComeposePage(),
     );
   }
 }
