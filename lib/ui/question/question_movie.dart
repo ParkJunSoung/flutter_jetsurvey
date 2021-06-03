@@ -31,12 +31,11 @@ class _QuestionMovieState extends State<QuestionMovie> {
               children: list.movie.keys.map((String key) {
                 return SizedBox(
                   height: 30,
-                  child: new CheckboxListTile(
+                  child: new RadioListTile(
                     value: list.movie[key],
                     title: new Text(key),
                     controlAffinity: ListTileControlAffinity.leading,
                     activeColor: Colors.purple,
-                    checkColor: Colors.white,
                     onChanged: (bool value) {
                       setState(() {
                         list.movie[key] = value;

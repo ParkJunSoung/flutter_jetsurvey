@@ -17,6 +17,7 @@ class _HomeState extends State<Home> {
     super.initState();
     Provider.of<ListProvider>(context, listen: false);
   }
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
@@ -76,41 +77,41 @@ class _HomeState extends State<Home> {
                       borderRadius: BorderRadius.circular(12), // <-- Radius
                     ),
                   ),
-                    onPressed: (){
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (_) => QuestionsMain()));
-                    },
-                    child: Text('Continue',style: TextStyle(fontSize: 17)),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => QuestionsMain()));
+                  },
+                  child: Text('Continue', style: TextStyle(fontSize: 17)),
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top:20.0, bottom: 20.0),
-              child: Text("or",
-                style: TextStyle(
-                    color: Colors.black,fontSize: 20),
+              padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+              child: Text(
+                "or",
+                style: TextStyle(color: Colors.black, fontSize: 20),
               ),
             ),
-      SizedBox(
-        width: 350.0,
-        height: 40.0,
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            primary: Colors.white.withOpacity(1.0),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12), // <-- Radius
+            SizedBox(
+              width: 350.0,
+              height: 40.0,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.white.withOpacity(1.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12), // <-- Radius
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (_) => QuestionsMain()));
+                },
+                child: Text(
+                  'Sign in as guest',
+                  style: TextStyle(color: Colors.deepPurple, fontSize: 17),
+                ),
+              ),
             ),
-          ),
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (_) => QuestionsMain()));
-          },
-          child: Text(
-            'Sign in as guest',
-            style: TextStyle(color: Colors.deepPurple, fontSize: 17),
-          ),
-        ),
-      ),
           ],
         ),
       ),

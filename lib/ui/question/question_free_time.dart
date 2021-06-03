@@ -26,7 +26,6 @@ class _QuestionFreeTimeState extends State<QuestionFreeTime> {
           Padding(
             padding: const EdgeInsets.only(right: 15),
             child: ListView(
-
               scrollDirection: Axis.vertical,
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),

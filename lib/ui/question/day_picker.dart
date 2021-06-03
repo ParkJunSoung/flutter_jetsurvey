@@ -112,7 +112,8 @@ class _DayPickersState extends State<DayPickers> {
                           child: Text(
                             'Select date',
                             style: TextStyle(
-                                color: Colors.white, fontWeight: FontWeight.bold),
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
                           ),
                           style: ElevatedButton.styleFrom(
                             primary: Colors.purple,
@@ -122,11 +123,11 @@ class _DayPickersState extends State<DayPickers> {
                     ),
                     Text(
                       text.split(' ')[0],
-                      style: TextStyle(fontSize: 55, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 55, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
-
               ],
             ),
           ),

@@ -14,19 +14,21 @@ class _QuestionSliderState extends State<QuestionSlider> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(top:200.0,left: 20.0,right: 30.0),
+        padding: const EdgeInsets.only(top: 200.0, left: 20.0, right: 30.0),
         child: Column(
           children: [
-            Text("How do you feel about selfies \u{1F933}?",
-              style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
+            Text(
+              "How do you feel about selfies \u{1F933}?",
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
             Padding(
-              padding: const EdgeInsets.only(top:20.0),
+              padding: const EdgeInsets.only(top: 20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("😒",
-                    style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+                  Text(
+                    "😒",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     width: 310,
@@ -45,7 +47,8 @@ class _QuestionSliderState extends State<QuestionSlider> {
                       },
                     ),
                   ),
-                  Text("\u{1F60D}",
+                  Text(
+                    "\u{1F60D}",
                     style: TextStyle(fontSize: 20),
                   ),
                 ],
