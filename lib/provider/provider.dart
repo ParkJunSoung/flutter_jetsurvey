@@ -20,7 +20,6 @@ class ListProvider extends ChangeNotifier {
     "Uni-Kitty (Lego Movie)": false,
     "Captain Planet": false,
   };
-
   Map<String, bool> movie = {
     "Star Trek": false,
     "The social network": false,

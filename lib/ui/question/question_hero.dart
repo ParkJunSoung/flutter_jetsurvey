@@ -31,12 +31,11 @@ class _QuestionHeroState extends State<QuestionHero> {
               children: list.superhero.keys.map((String key) {
                 return SizedBox(
                   height: 30,
-                  child: new CheckboxListTile(
+                  child: new RadioListTile(
                     value: list.superhero[key],
                     title: new Text(key),
                     controlAffinity: ListTileControlAffinity.leading,
                     activeColor: Colors.purple,
-                    checkColor: Colors.white,
                     onChanged: (bool value) {
                       setState(() {
                         list.superhero[key] = value;

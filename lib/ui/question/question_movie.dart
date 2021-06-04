@@ -11,15 +11,18 @@ class QuestionMovie extends StatefulWidget {
 
 class _QuestionMovieState extends State<QuestionMovie> {
   @override
-  Widget  build(BuildContext context) {
+  Widget build(BuildContext context) {
+    int counter = 0 ;
+
     var list = context.read<ListProvider>();
     return Scaffold(
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top:150.0,right: 30),
-            child: Text("What's your favorite \nmovie?",
-              style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold),
+            padding: const EdgeInsets.only(top: 150.0, right: 30),
+            child: Text(
+              "What's your favorite \nmovie?",
+              style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
             ),
           ),
           Expanded(
@@ -27,7 +30,7 @@ class _QuestionMovieState extends State<QuestionMovie> {
             child: ListView(
               scrollDirection: Axis.vertical,
               shrinkWrap: true,
-              physics: const  NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               children: list.movie.keys.map((String key) {
                 return SizedBox(
                   height: 30,
@@ -38,6 +41,7 @@ class _QuestionMovieState extends State<QuestionMovie> {
                     activeColor: Colors.purple,
                     onChanged: (bool value) {
                       setState(() {
+                        int counter = 0;
                         list.movie[key] = value;
                       });
                     },
