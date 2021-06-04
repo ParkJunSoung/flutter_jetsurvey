@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_jetsurvey/provider/provider.dart';
 import 'package:flutter_jetsurvey/ui/home.dart';
+import 'package:flutter_jetsurvey/ui/question/movie.dart';
 import 'package:flutter_jetsurvey/ui/question/question_movie.dart';
 import 'package:flutter_jetsurvey/ui/question_main.dart';
 import 'package:provider/provider.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: QuestionsMain(),
+          home: Movie(),
         )
     );
   }

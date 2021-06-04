@@ -12,9 +12,10 @@ class QuestionMovie extends StatefulWidget {
 class _QuestionMovieState extends State<QuestionMovie> {
   @override
   Widget build(BuildContext context) {
-    int counter = 0 ;
+
 
     var list = context.read<ListProvider>();
+
     return Scaffold(
       body: Column(
         children: [
