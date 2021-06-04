@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_jetsurvey/provider/provider.dart';
-import 'package:provider/provider.dart';
-
+enum Gender {MOVIE1, MOVIE2,MOVIE3,MOVIE4,}
 class QuestionMovie extends StatefulWidget {
   const QuestionMovie({Key key}) : super(key: key);
 
   @override
   _QuestionMovieState createState() => _QuestionMovieState();
 }
-
 class _QuestionMovieState extends State<QuestionMovie> {
+  int _counter = 0;
+  Gender _Movies = Gender.MOVIE1;
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
   @override
   Widget build(BuildContext context) {
-
-
-    var list = context.read<ListProvider>();
 
     return Scaffold(
       body: Column(
@@ -26,31 +27,54 @@ class _QuestionMovieState extends State<QuestionMovie> {
               style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
             ),
           ),
-          Expanded(
-            flex: 1,
-            child: ListView(
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              children: list.movie.keys.map((String key) {
-                return SizedBox(
-                  height: 30,
-                  child: new RadioListTile(
-                    value: list.movie[key],
-                    title: new Text(key),
-                    controlAffinity: ListTileControlAffinity.leading,
-                    activeColor: Colors.purple,
-                    onChanged: (bool value) {
-                      setState(() {
-                        int counter = 0;
-                        list.movie[key] = value;
-                      });
-                    },
-                  ),
-                );
-              }).toList(),
+          ListTile(
+            title: Text('Star Trek'),
+            leading: Radio(
+              value: Gender.MOVIE1,
+              groupValue: _Movies,
+              onChanged: (value) {
+                setState(() {
+                  _Movies = value;
+                });
+              },
             ),
           ),
+          ListTile(
+            title: Text('The social network'),
+            leading: Radio(
+              value: Gender.MOVIE2,
+              groupValue: _Movies,
+              onChanged: (value) {
+                setState(() {
+                  _Movies = value;
+                });
+              },
+            ),
+          ),
+          ListTile(
+            title: Text('Back to the future'),
+            leading: Radio(
+              value: Gender.MOVIE3,
+              groupValue: _Movies,
+              onChanged: (value) {
+                setState(() {
+                  _Movies = value;
+                });
+              },
+            ),
+          ),
+          ListTile(
+            title: Text('Outbreak'),
+            leading: Radio(
+              value: Gender.MOVIE4,
+              groupValue: _Movies,
+              onChanged: (value) {
+                setState(() {
+                  _Movies = value;
+                });
+              },
+            ),
+          )
         ],
       ),
     );

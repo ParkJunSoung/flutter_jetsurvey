@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_jetsurvey/provider/provider.dart';
-import 'package:provider/provider.dart';
-
+  enum QuestionHeros {HERO1, HERO2,HERO3,HERO4,}
 class QuestionHero extends StatefulWidget {
   const QuestionHero({Key key}) : super(key: key);
 
@@ -10,9 +8,16 @@ class QuestionHero extends StatefulWidget {
 }
 
 class _QuestionHeroState extends State<QuestionHero> {
+  int _counter = 0;
+  QuestionHeros _Heros = QuestionHeros.HERO1;
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
   @override
+
   Widget build(BuildContext context) {
-    var list = context.read<ListProvider>();
     return Scaffold(
       body: Column(
         children: [
@@ -22,30 +27,54 @@ class _QuestionHeroState extends State<QuestionHero> {
               style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold),
             ),
           ),
-          Expanded(
-            flex: 1,
-            child: ListView(
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
-              physics: const  NeverScrollableScrollPhysics(),
-              children: list.superhero.keys.map((String key) {
-                return SizedBox(
-                  height: 30,
-                  child: new RadioListTile(
-                    value: list.superhero[key],
-                    title: new Text(key),
-                    controlAffinity: ListTileControlAffinity.leading,
-                    activeColor: Colors.purple,
-                    onChanged: (bool value) {
-                      setState(() {
-                        list.superhero[key] = value;
-                      });
-                    },
-                  ),
-                );
-              }).toList(),
+          ListTile(
+            title: Text('Spider man (Avengers)'),
+            leading: Radio(
+              value: QuestionHeros.HERO1,
+              groupValue: _Heros,
+              onChanged: (value) {
+                setState(() {
+                  _Heros = value;
+                });
+              },
             ),
           ),
+          ListTile(
+            title: Text('Iroin man (Avengers)'),
+            leading: Radio(
+              value: QuestionHeros.HERO2,
+              groupValue: _Heros,
+              onChanged: (value) {
+                setState(() {
+                  _Heros = value;
+                });
+              },
+            ),
+          ),
+          ListTile(
+            title: Text('Uni-Kitty (Lego Movie)'),
+            leading: Radio(
+              value: QuestionHeros.HERO3,
+              groupValue: _Heros,
+              onChanged: (value) {
+                setState(() {
+                  _Heros = value;
+                });
+              },
+            ),
+          ),
+          ListTile(
+            title: Text('Captain Planet'),
+            leading: Radio(
+              value: QuestionHeros.HERO4,
+              groupValue: _Heros,
+              onChanged: (value) {
+                setState(() {
+                  _Heros = value;
+                });
+              },
+            ),
+          )
         ],
       ),
     );
